@@ -7,16 +7,17 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 
+
 CREATE TABLE IF NOT EXISTS movies (
     id SERIAL PRIMARY KEY,
-    external_id VARCHAR(50) UNIQUE NOT NULL, 
+    external_id INTEGER UNIQUE NOT NULL, 
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    release_year INTEGER,
-    cover_image VARCHAR(255),
+    year INTEGER,                        
+    genre VARCHAR(100),                  
+    stars NUMERIC(3, 1),                 
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-
 
 CREATE TABLE IF NOT EXISTS favorites (
     id SERIAL PRIMARY KEY,
